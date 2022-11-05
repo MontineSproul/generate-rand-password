@@ -37,12 +37,18 @@ if (charType.length >= 1) {
   for (var i = 0; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * charType.length);
     password += charType[randomNumber];
-   }
+   } 
   } else {
     console.log ('You must select at least one character type');
    }
   }
   passwordText.value = password;
+}
+function copyPass () {
+  var copyBtn = document.getElementById("password");
+  copyBtn.select("password");
+  navigator.clipboard.writeText(copyBtn.value);
+  alert("Copied the text: " + copyBtn.value);
 }
 
 // Add event listener to generate button
