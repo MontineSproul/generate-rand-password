@@ -35,8 +35,8 @@ if (passwordLength > 128 ) {
  } 
 if (charType.length >= 1) {
   for (var i = 0; i <= passwordLength; i++) {
-    var randomNumber = Math.floor(Math.random() * chars.length);
-    password += chars[randomNumber] + upper[randomNumber] + num[randomNumber] + lower[randomNumber];
+    var randomNumber = Math.floor(Math.random() * charType.length);
+    password += charType[randomNumber];
    }
   } else {
     console.log ('You must select at least one character type');
