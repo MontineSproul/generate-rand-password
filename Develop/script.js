@@ -1,9 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
 function writePassword() {
-  // var password = generatePassword();
   var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lower = "abcdefghijklmnopqrstuvwxyz";
   var num = "0123456789";
@@ -17,20 +16,16 @@ if (passwordLength > 128 ) {
 } else if (passwordLength < 8) {
   alert ('Your password must be greater than 8 characters!');
 } else {
-  var hasUpper = confirm('Do you want to use uppercase letters?');
-  var hasNum = confirm('Would you like to have a number or numbers in your password?');
-  var hasLower = confirm('Do you want lowercase letters?');
-  var hasSpecial = confirm('Do you want any special characters?');
-  if (hasUpper) { 
+if (confirm('Do you want to use uppercase letters?')) { 
     charType = charType + upper;
  } 
- if (hasNum) {
+if (confirm('Would you like to have a number or numbers in your password?')) {
    charType = charType + num;
  }
- if (hasLower) {
+if (confirm('Do you want lowercase letters?')) {
   charType = charType + lower;
  }
- if (hasSpecial) {
+if (confirm('Do you want any special characters?')) {
   charType = charType + chars;
  } 
 if (charType.length >= 1) {
@@ -44,6 +39,7 @@ if (charType.length >= 1) {
   }
   passwordText.value = password;
 }
+
 function copyPass () {
   var copyBtn = document.getElementById("password");
   copyBtn.select("password");
@@ -51,5 +47,6 @@ function copyPass () {
   alert("Copied the text: " + copyBtn.value);
 }
 
+copyPass();
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
