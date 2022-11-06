@@ -47,6 +47,5 @@ function copyPass () {
   alert("Copied the text: " + copyBtn.value);
 }
 
-copyPass();
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
